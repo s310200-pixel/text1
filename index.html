@@ -2,9 +2,9 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <!-- 1. 新增手機端 Viewport 標籤與禁止縮放優化 -->
+  <!-- 1. 手機端 Viewport 標籤與禁止縮放優化 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>點陣封鎖遊戲 (逆向賽制)</title>
+  <title>zackery game</title>
   <style>
     * {
       box-sizing: border-box;
@@ -29,7 +29,7 @@
       text-align: center;
     }
     
-    /* 遊戲規則區塊 (手機寬度自適應) */
+    /* 遊戲規則區塊 */
     .rules-card { 
       background: #fff; 
       border-left: 4px solid #dc3545; 
@@ -120,7 +120,7 @@
     .dot.valid { background-color: #ffc107; cursor: pointer; animation: pulse 1.2s infinite alternate; }
     .dot.start-selected { background-color: #17a2b8; transform: scale(1.3); }
     
-    /* 禁用格子 (Ban) 樣式 */
+    /* 禁用格子 */
     .dot.banned { background-color: #343a40; transform: scale(1.1); cursor: not-allowed; }
     .dot.banned::after { content: '✕'; color: #fff; font-size: 10px; font-weight: bold; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
@@ -147,7 +147,7 @@
       background-color: #fff;
     }
 
-    /* 極小螢幕進一步微調點的大小 */
+    /* 微調點的大小 */
     @media (max-width: 360px) {
       .dot { width: 14px; height: 14px; }
       body { padding: 8px; }
@@ -157,19 +157,19 @@
 
 <body>
 
-  <h1>點陣連線遊戲</h1>
+  <h1>zackery game</h1>
 
   <div class="rules-card">
-    <h3>📜 遊戲流程與規則（逆向賽制）</h3>
+    <h3>📜 遊戲流程與規則</h3>
     <b>🎮 遊戲步驟：</b>
     <ol>
-      <li><b>進行禁手</b>：雙方開局各選擇 1 個格子進行<b>封鎖（Ban）</b>。</li>
+      <li><b>進行禁手</b>：雙方開局各選擇 1 個格子進行<b>封鎖</b>。</li>
       <li><b>選擇起點</b>：玩家 A 選擇任意未封鎖的點作為起點並畫線。</li>
-      <li><b>輪流接續</b>：雙方從上一玩家的「終點」繼續延伸連線。</li>
+      <li><b>輪流接續</b>：雙方從上一玩家的(終點)繼續延伸連線。</li>
     </ol>
     <b>⚠️ 限制與勝負條件：</b>
     <ul>
-      <li><b>禁止重複</b>：被封鎖（Ban）或走過的點<b>不可再次造訪</b>。</li>
+      <li><b>禁止重複</b>：被封鎖或走過的點<b>不可再次造訪</b>。</li>
       <li><b>勝負判定</b>：<b>無路可走者獲勝</b>（畫出最後一條線的人失敗）。</li>
     </ul>
   </div>
